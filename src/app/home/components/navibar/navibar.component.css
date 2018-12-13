@@ -1,0 +1,16 @@
+a {
+    cursor: pointer;
+}
+
+a:disabled {
+    cursor: not-allowed;
+}
+
+nav {
+    border-bottom: solid 5px #000;
+}
+
+.dropdown-menu {
+  margin-top: -0.8rem;
+  z-index: -10;
+}

@@ -1,0 +1,30 @@
+<aside id="sidebar" class="px-md-3 py-md-3" *ngIf="menus">
+
+  <div class="sidebar-body">
+    <h1 class="w-100 sr-only">Aside Navibar</h1>
+
+    <div class="content row mt-3">
+      <div class="col-9">
+
+        <ul class="nav flex-column">
+
+          <li class="nav-item" *ngFor="let menu of menus">
+
+            <ng-container [ngSwitch]="menu.layout">
+
+              <h2 *ngSwitchCase="'header'" class="menu-header">{{menu.title}}</h2>
+
+              <hr *ngSwitchCase="'divider'" />
+
+              <a *ngSwitchDefault class="nav-link" [routerLink]="['/home', ppgid, menu.pgid]" routerLinkActive="active">{{menu.title}}</a>
+
+            </ng-container>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+</aside>
