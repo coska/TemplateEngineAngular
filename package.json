@@ -64,6 +64,8 @@
     "sharp": "^0.21.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.4.2"
+    "typescript": "~2.4.2",
+    "cryptiles": ">=4.1.2",
+    "hoek": ">=4.2.1"
   }
 }
