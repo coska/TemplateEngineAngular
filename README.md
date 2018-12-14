@@ -16,6 +16,10 @@ This version is a draft.
 
 - Centralized state management by NgRx 
 
+## Basic Commands
+- npm install  <-- package.json
+- npm run cms  --> new ->  refresh
+
 ## Directory Structure
 
 ```bash
