@@ -9,6 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "cptest": "copy .\\src\\CNAME .\\dist",
+    "build:coska": "ng build --base-href / --aot --prod",
+    "deploy:coska": "npx ngh --dir=dist --repo=https://github.com/coska/coska.github.com.git --no-silent --branch=master",
     "build:tangos": "ng build --base-href=/coska/ --aot --prod",
     "deploy:tangos": "npx ngh --dir=dist --repo=git@github.com:tangoslee/coska.git --no-silent",
     "cli:imagestore": "ts-node ./tools/bin/app.ts cmd imagestore path ",
@@ -64,6 +67,8 @@
     "sharp": "^0.21.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.4.2"
+    "typescript": "~2.4.2",
+    "cryptiles": ">=4.1.2",
+    "hoek": ">=4.2.1"
   }
 }

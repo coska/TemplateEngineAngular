@@ -22,12 +22,16 @@ body {
   line-height: 2rem;
   position: relative;
   overflow-y: scroll;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;; 
+  /* font-family: 'Montserrat', sans-serif; */
   /* font-family: 'Sunflower', sans-serif; */
   /* font-family: 'Stylish', sans-serif; */
   /* font-family: 'Noto Sans KR', sans-serif; */
 }
 
+ul {
+  padding-left: 20px;
+}
 .font-jejuhallasan {
   font-family: 'Jeju Hallasan', cursive;
 }
@@ -58,7 +62,7 @@ body {
 #navibar,
 aside,
 .breadcrumb {
-  font-family: 'Do Hyeon', sans-serif;
+  /* font-family: 'Do Hyeon', sans-serif; */
   /* font-family: 'Jeju Gothic', serif; */
 }
 
