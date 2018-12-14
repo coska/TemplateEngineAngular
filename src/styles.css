@@ -44,7 +44,7 @@ body {
 
 .logo-text::after {
   /* content: '코스카'; */
-  content: 'Coska';
+  /* content: 'Coska'; */
 }
 
 .logo img {
