@@ -130,6 +130,12 @@
           "pgid": "bbs",
           "layout": "section",
           "doctype": "xml"
+        },
+        {
+          "title": "구인/구직",
+          "pgid": "archv0101",
+          "layout": "section",
+          "doctype": "xml"
         }
       ]
     },
