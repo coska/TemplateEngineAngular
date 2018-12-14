@@ -102,7 +102,7 @@ id: ${this.id}
 title: ${this.title}
 publishedAt: ${this.publishedAt}
 desc: ${this.desc}
-${coverImage}
+coverImage: ${this.coverImage}
 ---
 
 ${this.body}

@@ -20,7 +20,7 @@ export class DocService {
 
       // <meta property="cms:title" content = "title" />
       // <meta property="cms:publishedAt" content = "pubDate" />
-      // <meta property="cms:desc" content = "content" />
+      // <meta property="cms:desc" content = "desc" />
       // <meta property="cms:author" content = "author" />
 
       const doc = { id };
