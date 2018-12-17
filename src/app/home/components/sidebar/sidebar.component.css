@@ -8,7 +8,7 @@
 }
 
 .nav-link {
-  padding: 0.5rem 0 0 0;
+  padding: 0 0 0 0;
 }
 
 /* #sidebar.active {
@@ -52,6 +52,6 @@
 }
 
 .menu-header {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }
