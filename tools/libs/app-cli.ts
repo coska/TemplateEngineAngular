@@ -145,6 +145,17 @@ export class AppCli {
             }
           });
         if (data !== null) {
+          data.sort( (a, b) => {
+            const t1 = a["publishedAt"];
+            const t2 = b["publishedAt"];
+            if(t1 > t2) {
+              return -1;
+            }
+             if(t1 < t2 ) {
+               return 1;
+             }
+             return 0;
+          });
           this.util.saveJSON(output, data, { overwrite: true });
         }
       });
