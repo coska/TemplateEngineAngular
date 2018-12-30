@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
@@ -20,7 +21,7 @@ export class MainComponent implements OnInit, OnDestroy {
   getStateSub: any;
   routeSub: any;
 
-  constructor(private store: Store<AppState>, private route: ActivatedRoute) {
+  constructor(private store: Store<AppState>, private route: ActivatedRoute, private _location: Location) {
     this.getState = this.store.select(selectAppState);
 
     this.getStateSub = this.getState.subscribe(({ uriMap, content }) => {
@@ -28,6 +29,10 @@ export class MainComponent implements OnInit, OnDestroy {
       this.content = content;
       this.uriMap = uriMap;
     });
+  }
+
+  goBack() {
+    this._location.back();
   }
 
   ngOnInit() {

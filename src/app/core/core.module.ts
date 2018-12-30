@@ -15,6 +15,7 @@ import {
 } from './components';
 import { TruncatePipe } from '@app/core/pipes';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { MyMenuFilterPipe } from './pipes/MyMenuFilter.pipe';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { SafeHtmlPipe } from './pipes/safe-html.pipe';
     LoadingComponent,
     UndermaintenanceComponent,
     SafeHtmlPipe,
+    MyMenuFilterPipe,
   ],
   providers: [
     // HttpTokenProvider,
@@ -41,6 +43,7 @@ import { SafeHtmlPipe } from './pipes/safe-html.pipe';
     LoadingComponent,
     UndermaintenanceComponent,
     SafeHtmlPipe,
+    MyMenuFilterPipe,
   ]
 })
 export class CoreModule { }

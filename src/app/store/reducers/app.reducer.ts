@@ -28,7 +28,7 @@ const initialState: State = {
 
 const hashURIMap = (menus, parent = null) => {
   return menus.reduce((hash, menu) => {
-    const { title, pgid, layout, doctype, display, type, format, subMenu } = menu;
+    const { title, pgid, layout, doctype, display, type, format, subMenu, disabled } = menu;
     if (pgid) {
       const id = (parent) ? `${parent}/${pgid}` : pgid;
 
@@ -40,7 +40,9 @@ const hashURIMap = (menus, parent = null) => {
         display: display ? display : null,
         type: type ? type : null,
         format: format ? format : null,
-        subMenu: subMenu ? subMenu : null
+        subMenu: subMenu ? subMenu : null,
+        disabled: disabled ? disabled : false
+        
       };
 
       if (Object.prototype.hasOwnProperty.call(menu, 'subMenu')) {

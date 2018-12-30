@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Location } from '@angular/common';
 import { Content } from '@app/core/models/content';
 
 @Component({
@@ -11,10 +12,14 @@ export class XmlComponent implements OnInit {
   @Input() content: Content = null;
 
 
-  constructor(
-  ) { }
+  constructor(private _location: Location  ) { 
+
+  }
 
   ngOnInit() {
   }
-
+  
+  goBack() {
+    this._location.back();
+  }
 }

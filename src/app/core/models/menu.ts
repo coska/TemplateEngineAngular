@@ -9,4 +9,6 @@ export interface Menu {
     layout?: string;
     doctype?: string;
     display?: string;
+    
+    disabled?: string;
 }

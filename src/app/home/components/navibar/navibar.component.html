@@ -9,7 +9,7 @@
     <ul class="navbar-nav ml-auto">
 
       <!-- // Mobile Menu -->
-      <li class="nav-item dropdown d-block" *ngFor="let menu of menus; let i = index;"
+      <li class="nav-item dropdown d-block" *ngFor="let menu of menus| mymenufilter; let i = index;"
       (mouseenter)="onAreaIn(i)"
       (mouseleave)="onAreaOut(i)">
         <a *ngIf="menu.layout && menu.layout === 'extlink'" class="nav-link" href="{{menu.url}}" target="_blank">{{menu.title}}</a>
@@ -18,7 +18,7 @@
           {{menu.title}}
         </a>
         <div *ngIf="menu.subMenu" class="dropdown-menu" aria-labelledby="navbarDropdown" [ngClass]="{ show: showDropDown[i] }">
-          <ng-container *ngFor="let sub of menu.subMenu">
+          <ng-container *ngFor="let sub of menu.subMenu | mymenufilter">
             <ng-container [ngSwitch]="sub.layout">
               <h6  *ngSwitchCase="'header'" class="dropdown-header">{{sub.title}}</h6>
               <div *ngSwitchCase="'divider'" class="dropdown-divider"></div>
@@ -31,7 +31,7 @@
       </li>
 
       <!-- // Desktop Menu -->
-      <!-- <li class="nav-item d-none d-lg-block" *ngFor="let menu of menus">
+      <!-- <li class="nav-item d-none d-lg-block" *ngFor="let menu of menus ">
         <a *ngIf="menu.pgid" class="nav-link" [routerLink]="['/' + baseHref, menu.pgid]" routerLinkActive="active">{{menu.title}}</a>
         <a *ngIf="menu.layout && menu.layout === 'extlink'" class="nav-link" href="{{menu.url}}" target="_blank">{{menu.title}}</a>
       </li> -->
