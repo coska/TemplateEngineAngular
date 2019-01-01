@@ -28,9 +28,12 @@ body {
   /* font-family: 'Stylish', sans-serif; */
   /* font-family: 'Noto Sans KR', sans-serif; */
 }
+
+
+
 /* Color Theme */
 
-body, pre, .navbar-light, .navbar-nav, .nav-link { 
+body, pre, .navbar-light .navbar-nav .nav-link { 
   color: #e0e0e0 !important;
 }
 
@@ -64,6 +67,10 @@ a {
 .markdown th, .markdown td {
   border-bottom: 1px solid rgb(122, 122, 122);
   padding-left: 4px;
+}
+
+.markdown img{
+  max-width:720px;
 }
 
 /* Color Theme Fin */
