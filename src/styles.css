@@ -18,17 +18,55 @@ html {
 
 body {
   min-height: 100%;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 2rem;
   position: relative;
   overflow-y: scroll;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;; 
-  background-color: #212529;
   /* font-family: 'Montserrat', sans-serif; */
   /* font-family: 'Sunflower', sans-serif; */
   /* font-family: 'Stylish', sans-serif; */
   /* font-family: 'Noto Sans KR', sans-serif; */
 }
+/* Color Theme */
+
+body, pre, .navbar-light, .navbar-nav, .nav-link { 
+  color: #e0e0e0 !important;
+}
+
+body, .dropdown-menu {
+  background-color: #212529 !important;
+}
+
+a { 
+  color: #e0e0e0;
+}
+.sidebar-body a {
+  color: #fff;
+}
+
+#sidebar {
+  background-color: #202020;
+}
+
+.breadcrumb {
+  background-color:#3f3f3f; 
+}
+
+#navibar {
+  background-color: #262626;
+}
+
+#footer {
+  background-color: #000;
+}
+
+.markdown th, .markdown td {
+  border-bottom: 1px solid rgb(122, 122, 122);
+  padding-left: 4px;
+}
+
+/* Color Theme Fin */
 
 ul {
   padding-left: 20px;
@@ -53,7 +91,7 @@ ul {
 }
 
 .logo img {
-  background-color: #f8f9fa;
+  background-color: #000;
   max-width: 150px !important;
  /* width: 269px;
   height: 123px; */
@@ -69,7 +107,6 @@ aside,
 
 #navibar {
   font-size: 1.2rem;
-  background-color: #fff;
 }
 
 aside {
@@ -219,14 +256,14 @@ footer {
   /* pointer-events: none; */
   /* cursor: default; */
   text-decoration: none;
-  color: #212529;
+  color: #e0e0e0;
 }
 
 a.post-link {
   /* pointer-events: none; */
   /* cursor: default; */
   text-decoration: none;
-  color: #212529;
+  color: #e0e0e0;
 }
 
 /* E:Cards */

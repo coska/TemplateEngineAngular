@@ -1,3 +1,5 @@
+
+
 a {
     cursor: pointer;
 }
@@ -7,10 +9,15 @@ a:disabled {
 }
 
 nav {
-    border-bottom: solid 5px #000;
+    border-bottom: solid 0px #000;
 }
 
 .dropdown-menu {
   margin-top: -0.6rem;
   z-index: -10;
+  font-size: .9rem;
+}
+
+.nav-link  {
+    padding-bottom:0 !important;
 }
