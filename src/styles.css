@@ -23,6 +23,7 @@ body {
   position: relative;
   overflow-y: scroll;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;; 
+  background-color: #212529;
   /* font-family: 'Montserrat', sans-serif; */
   /* font-family: 'Sunflower', sans-serif; */
   /* font-family: 'Stylish', sans-serif; */

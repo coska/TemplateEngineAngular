@@ -45,7 +45,7 @@ export class MainComponent implements OnInit, OnDestroy {
       if (postid) {
         const { layout, doctype } = this.uriMap[id];
         const path = `section/${ppgid}/${pgid}/${postid}`;
-        // console.log('getpost:', postid, {layout, doctype});
+        //  console.log('getpost:', postid, {layout, doctype});
         this.store.dispatch(
           new GetContent({
             ...content,
@@ -63,15 +63,19 @@ export class MainComponent implements OnInit, OnDestroy {
           this.store.dispatch(new GetSection({ ...content, path, id, layout, doctype }));
         } else {
           // page
-          // console.log('getpage')
           const path = `${layout}/${id}`;
+          console.log('getpage, path:' + path + ", layout:" + layout + ", doctype=" + doctype) ;
           this.store.dispatch(new GetContent({ ...content, path, id, layout, doctype }));
         }
       } else {
         // console.log('getmain')
-        this.store.dispatch(
-          new GetContent({ path: 'page/main', layout: 'page', doctype: 'html', id: 'main', body: '' })
-        );
+        // this.store.dispatch(
+        //   new GetContent({ path: 'page/main', layout: 'page', doctype: 'html', id: 'main', body: '' })
+        // );
+        const path = `page/m01/m010101`;        
+        
+        this.store.dispatch(new GetContent({ ...content, path, id:'m010101', layout:'page', doctype:'html' }));
+        
       }
     });
   }
