@@ -45,7 +45,9 @@ export class HomeService {
         'Content-type': 'text/html; charset=utf-8',
       },
     };
-    return this.apiService.get(`${environment.API_URL}/assets/${path}.md`, {}, options).pipe(
+    //const url =  environment.API_URL + '/assets/' + path + '.md';
+    const url =  environment.API_URL + '/assets/' + path + '.text'; // since github page not support .md file in specific case use html extenthin
+    return this.apiService.get(url, {}, options).pipe(
       map(data => {
         const parsed = parse(data);
         const html = parsed.html

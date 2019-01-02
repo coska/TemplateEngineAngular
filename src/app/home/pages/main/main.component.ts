@@ -45,7 +45,7 @@ export class MainComponent implements OnInit, OnDestroy {
       if (postid) {
         const { layout, doctype } = this.uriMap[id];
         const path = `section/${ppgid}/${pgid}/${postid}`;
-        //  console.log('getpost:', postid, {layout, doctype});
+        console.log('getpost:', postid, {layout, doctype, path});
         this.store.dispatch(
           new GetContent({
             ...content,
@@ -58,8 +58,8 @@ export class MainComponent implements OnInit, OnDestroy {
       } else if (this.uriMap && this.uriMap[id] !== undefined) {
         const { layout, doctype } = this.uriMap[id];
         if (layout === 'section') {
-          // console.log('getsection')
           const path = `${layout}/${id}`;
+          console.log('getsection path = ' + path)
           this.store.dispatch(new GetSection({ ...content, path, id, layout, doctype }));
         } else {
           // page
