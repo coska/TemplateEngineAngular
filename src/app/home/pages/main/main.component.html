@@ -13,8 +13,9 @@
 
       <div class="row main-body">
         <div class="col-md">
-          <ng-container [ngSwitch]="content.layout">
+          <ng-container [ngSwitch]="container">
             <app-sections *ngSwitchCase="'section'"></app-sections>
+            <!-- <app-modal-contents *ngSwitchDefault></app-modal-contents> -->
             <app-contents *ngSwitchDefault></app-contents>
           </ng-container>
         </div>

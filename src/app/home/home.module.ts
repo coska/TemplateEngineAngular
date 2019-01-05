@@ -23,6 +23,7 @@ import { FileNotFoundComponent } from './components/file-not-found/file-not-foun
 import { ListComponent } from './components/sections/list/list.component';
 import { CardComponent } from './components/sections/card/card.component';
 import { SectionsComponent } from './components/sections/sections.component';
+import { ModalContentsComponent } from './components/modal-contents/modal-contents.component';
 
 @NgModule({
   imports: [CommonModule, CoreModule, HomeRoutingModule],
@@ -40,6 +41,7 @@ import { SectionsComponent } from './components/sections/sections.component';
     SectionsComponent,
     ListComponent,
     CardComponent,
+    ModalContentsComponent,
   ],
   exports: [
     BreadcrumbComponent,
