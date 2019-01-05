@@ -68,13 +68,12 @@ export class MainComponent implements OnInit, OnDestroy {
           this.store.dispatch(new GetContent({ ...content, path, id, layout, doctype }));
         }
       } else {
-        // console.log('getmain')
-        // this.store.dispatch(
-        //   new GetContent({ path: 'page/main', layout: 'page', doctype: 'html', id: 'main', body: '' })
-        // );
-        const path = `page/m01/m010101`;        
+        console.log('getmain')
+        this.store.dispatch(
+          new GetContent({ path: 'page/main', layout: 'page', doctype: 'html', id: 'main', body: '' })
+        );
         
-        this.store.dispatch(new GetContent({ ...content, path, id:'m010101', layout:'page', doctype:'html' }));
+        // this.store.dispatch(new GetContent({ ...content, path:`page/m01/m010101`, id:'m010101', layout:'page', doctype:'html' }));
         
       }
     });

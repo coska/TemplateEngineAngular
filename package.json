@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --aot -o",
+    "start": "ng serve --aot",
     "build": "ng build --aot --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -12,10 +12,8 @@
     "cptest": "copy .\\src\\CNAME .\\dist",
     "build:coska": "ng build --base-href / --aot --prod",
     "deploy:coska": "npx ngh --dir=dist --repo=https://github.com/coska/coska.github.com.git --no-silent --branch=master",
-    
     "build:test": "ng build --base-href /coskawebtest/ --aot --prod",
     "deploy:test": "npx ngh --dir=dist --repo=https://github.com/coska/coskawebtest.git --no-silent --branch=master",
-
     "build:tangos": "ng build --base-href=/coska/ --aot --prod",
     "deploy:tangos": "npx ngh --dir=dist --repo=git@github.com:tangoslee/coska.git --no-silent",
     "cli:imagestore": "ts-node ./tools/bin/app.ts cmd imagestore path ",

@@ -18,6 +18,7 @@ export class BreadcrumbComponent implements OnInit, OnDestroy {
   paths: string[] = [];
   uriMap: any;
   getState: Observable<any>;
+  isHome: boolean = false;
 
   getStateSub: any;
   routeSub: any;
@@ -29,6 +30,7 @@ export class BreadcrumbComponent implements OnInit, OnDestroy {
     this.getState = this.store.select(selectAppState);
     this.getStateSub = this.getState.subscribe(({ uriMap }) => {
       this.uriMap = uriMap;
+      this.isHome = true;
       this.routeSub = this.route.params.subscribe(params => {
         const { ppgid, pgid } = params;
         this.paths = [];
@@ -37,6 +39,9 @@ export class BreadcrumbComponent implements OnInit, OnDestroy {
         }
         if (pgid) {
           this.paths.push(`${ppgid}/${pgid}`);
+        }
+        if(this.paths.length > 0) {
+          this.isHome = false;
         }
       });
     });
