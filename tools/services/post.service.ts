@@ -19,7 +19,7 @@ export class PostService {
 
     for (let i = 0; i < n; i++) {
       const post = new FakePost(output);
-      const result = this.util.writeFile(`${output}/${post.id}.md`, post.toString());
+      const result = this.util.writeFile(`${output}/${post.id}.text`, post.toString());
       writes.push(result);
     }
 
@@ -40,7 +40,7 @@ export class PostService {
 
     return Promise.all([
       this.util.mkdir(fullPath, true),
-      this.util.writeFile(`${fullPath}.md`, post.toString()),
+      this.util.writeFile(`${fullPath}.text`, post.toString()),
     ]);
 
   }

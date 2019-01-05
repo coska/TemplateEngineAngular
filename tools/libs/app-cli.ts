@@ -116,12 +116,18 @@ export class AppCli {
     return new Promise((resolve, reject) => {
       fs.readdir(path, (err, files) => {
         const data = files
-          .filter(file => file.match(/\.(xml|md|html)$/))
+          .filter(file => file.match(/\.(xml|md|text|html)$/))
           .map(file => {
             const { name, ext } = this.util.parseFileName(file);
             // console.log({ name, ext });
             const content = fs.readFileSync(`${path}/${file}`, 'utf8');
             switch (ext) {
+              case 'text': {
+                const { parsedYaml, html, yaml, markdown } = parse(content.toString());
+                // console.log({ parsedYaml, html, yaml, markdown });
+                const doc = this.docService.parseHTML(html);
+                return { ...parsedYaml, ...doc };
+              }
               case 'md': {
                 const { parsedYaml, html, yaml, markdown } = parse(content.toString());
                 // console.log({ parsedYaml, html, yaml, markdown });
@@ -167,7 +173,7 @@ export class AppCli {
     return new Promise((resolve, reject) => {
       fs.readdir(path, (err, files) => {
         files
-          .filter(file => !file.match(/\.(xml|md|html|json)$/))
+          .filter(file => !file.match(/\.(xml|md|text|html|json)$/))
           .map(file => {
             this.imageService.thumbs(`${path}/${file}`, 300, 0);
           });
