@@ -79,7 +79,8 @@ a:visited {
 }
 
 .markdown img{
-  max-width: 100%;;
+  max-width: 100%;
+  margin-top: 1rem;
 }
 
 .container-fluid, .navbar-collapse {
