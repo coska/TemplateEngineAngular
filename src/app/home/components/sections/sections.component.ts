@@ -50,7 +50,7 @@ export class SectionsComponent implements OnInit {
       const { layout, doctype } = this.uriMap[id];
       // const layout = 'section';
       const path = `${layout}/${id}`;
-      console.log('getsection path = ' + path)
+      // console.log('getsection path = ' + path)
       this.store.dispatch(new GetSection({ ...content, path, id, layout, doctype }));
 
     });
