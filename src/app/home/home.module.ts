@@ -24,6 +24,8 @@ import { ListComponent } from './components/sections/list/list.component';
 import { CardComponent } from './components/sections/card/card.component';
 import { SectionsComponent } from './components/sections/sections.component';
 import { ModalContentsComponent } from './components/modal-contents/modal-contents.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   imports: [CommonModule, CoreModule, HomeRoutingModule],
@@ -42,6 +44,8 @@ import { ModalContentsComponent } from './components/modal-contents/modal-conten
     ListComponent,
     CardComponent,
     ModalContentsComponent,
+    HomeComponent,
+    LayoutComponent,
   ],
   exports: [
     BreadcrumbComponent,

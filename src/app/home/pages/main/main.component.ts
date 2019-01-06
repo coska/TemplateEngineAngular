@@ -48,14 +48,15 @@ export class MainComponent implements OnInit, OnDestroy {
 
       console.log({ id, hit: this.uriMap[id] });
 
-      if (postid) {
-        this.container = 'page';
-      } else if (this.uriMap && this.uriMap[id] !== undefined) {
+      // if (postid) {
+      //   this.container = 'page';
+      // } else
+      if (this.uriMap && this.uriMap[id] !== undefined) {
         const { layout } = this.uriMap[id];
-        if (layout === 'section') {
-          this.container = 'section';
-        } else {
+        if (layout === 'page' || (layout === 'section' && postid)) {
           this.container = 'page';
+        } else {
+          this.container = 'section';
         }
       } else {
         console.log('getmain')
