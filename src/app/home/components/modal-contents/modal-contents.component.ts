@@ -1,6 +1,7 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, ContentChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Renderer3 } from '@angular/core/src/render3/renderer';
+import { Content } from '@app/core/models';
 
 @Component({
   selector: 'app-modal-contents',
@@ -12,6 +13,8 @@ export class ModalContentsComponent implements OnInit {
   show = true;
 
   routeSub: any;
+
+  content: Content = {doctype: null, id: null, body: null};
 
   constructor(
     private route: ActivatedRoute,
@@ -28,5 +31,7 @@ export class ModalContentsComponent implements OnInit {
   close() {
     this.show = false;
     this.renderer.removeClass(document.body, 'modal-open');
+    // fill empty content();
+    this.content = {doctype: null, id: null, body: null};
   }
 }
