@@ -29,7 +29,7 @@
     <xsl:if test="comments/comment">
       <xsl:for-each select="comments/comment">
         <li class="media">
-          <div class="media-body">
+          <div class="media-body row">
             <div class="mr-1"><xsl:value-of select="content" /></div>
             <div class="blockquote-footer">
               <cite title="Source Title">
