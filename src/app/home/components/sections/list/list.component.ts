@@ -14,15 +14,15 @@ export class ListComponent implements OnInit {
   @Input()
   link: string;
 
-  private router: any;
   private route: any;
+  private router: any;
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
+    private _route: ActivatedRoute,
+    private _router: Router,
   ) {
-    this.route = route;
-    this.router = router;
+    this.route = _route;
+    this.router = _router;
   }
 
   ngOnInit() { }
