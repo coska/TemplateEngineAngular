@@ -59,10 +59,12 @@ export class MainComponent implements OnInit, OnDestroy {
           this.container = 'section';
         }
       } else {
-        console.log('getmain')
-        this.store.dispatch(
-          new GetContent({ path: 'page/main', layout: 'page', doctype: 'html', id: 'main', body: '' })
-        );
+        // console.log('getmain')
+        // this.store.dispatch(
+        //   new GetContent({ path: 'page/main', layout: 'page', doctype: 'html', id: 'main', body: '' })
+        // );
+        // TODO 404 not found
+        console.log('404 not found');
       }
 
       console.log('container!!!:', this.container);

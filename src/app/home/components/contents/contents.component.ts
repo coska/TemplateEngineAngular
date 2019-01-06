@@ -54,6 +54,12 @@ export class ContentsComponent implements OnInit {
       const id = ppgid && pgid ? `${ppgid}/${pgid}` : '';
       const { layout, doctype } = this.uriMap[id];
 
+      // Section posts should have a postid
+      if (layout === 'section' && !postid) {
+        // invalid access
+        return;
+      }
+
       const path = postid
         ? `section/${id}/${postid}`
         : `${layout}/${id}`;
