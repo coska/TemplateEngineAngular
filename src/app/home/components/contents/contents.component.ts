@@ -64,7 +64,7 @@ export class ContentsComponent implements OnInit {
         ? `section/${id}/${postid}`
         : `${layout}/${id}`;
 
-      console.log('getpost:', postid, { layout, doctype, path });
+      // console.log('getpost:', postid, { layout, doctype, path });
 
       this.store.dispatch(
         new GetContent({

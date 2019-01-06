@@ -9,10 +9,11 @@
   overflow-y: scroll;
   outline: 0;
 }
+
 .modal-body, 
 .modal-dialog, 
-.row {
-  max-width: 100% !important;
+.row 
+{
   height: 100% !important;
 }
 
@@ -99,4 +100,55 @@
 
 .cms-title {
   color: #000;
+}
+
+@media (min-width: 300px) {
+  .modal-body, .modal-dialog, .row {
+    max-width: 300px !important;
+  }
+}
+
+/* Galaxy S5 */
+@media (min-width: 360px) {
+  .modal-body, .modal-dialog, .row {
+    max-width: 360px !important;
+  }
+}
+
+/* iPhone 6/7/8 */
+@media (min-width: 375px) {
+  .modal-body, .modal-dialog, .row {
+    max-width: 375px !important;
+  }
+}
+
+/* Pixel 2 XL */
+@media (min-width: 411px) {
+  .modal-body, .modal-dialog, .row {
+    max-width: 411px !important;
+  }
+}
+
+@media (min-width: 575px) {
+  .modal-body, .modal-dialog, .row {
+    max-width: 575px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-body, .modal-dialog, .row {
+    max-width: 768px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-body, .modal-dialog, .row {
+    max-width: 992px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal-body, .modal-dialog, .row {
+    max-width: 1140px !important;
+  }
 }

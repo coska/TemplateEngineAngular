@@ -83,10 +83,10 @@ a:visited {
   margin-top: 1rem;
 }
 
-.container-fluid, .navbar-collapse {
+/* .container-fluid, .navbar-collapse {
   margin-left: 0;
-  max-width: 950px ; /* or 950px */
-}
+  max-width: 950px ;
+} */
 
 /* Font Size */
 
@@ -189,10 +189,6 @@ aside {
   padding-right: 0;
 }
 
-.main-body {
-  margin: 1.5rem 1rem;
-}
-
 .breadcrumb {
   margin: 0;
 }
@@ -227,6 +223,10 @@ footer {
   #sidebar {
     display: block;
   }
+  .main-body {
+    margin: 1.5rem 1rem;
+  }
+  
 }
 
 @media (min-width: 1200px) {}
@@ -279,7 +279,7 @@ footer {
   }
 
   .media-body p {
-    max-width: 400px;
+    max-width: 900px;
     margin-left: 1rem;
   }
 
