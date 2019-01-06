@@ -4,7 +4,7 @@
     <div class="col-md" *ngIf="container">
       <ng-container [ngSwitch]="container">
         <app-sections *ngSwitchCase="'section'"></app-sections>
-        <!-- <app-modal-contents *ngSwitchCase="'page-modal'"></app-modal-contents> -->
+        <app-modal-contents *ngSwitchCase="'page.modal'"></app-modal-contents>
         <app-contents *ngSwitchDefault></app-contents>
       </ng-container>
     </div>

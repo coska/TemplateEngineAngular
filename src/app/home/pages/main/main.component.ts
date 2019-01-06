@@ -39,35 +39,29 @@ export class MainComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(route => {
-      console.log({ route });
+      
       const { ppgid, pgid, postid } = route;
       const content = this.content;
       const id = ppgid && pgid ? `${ppgid}/${pgid}` : '';
 
       this.container = content.layout || '';
 
-      console.log({ id, hit: this.uriMap[id] });
+      // console.log({ id, hit: this.uriMap[id] });
 
-      // if (postid) {
-      //   this.container = 'page';
-      // } else
       if (this.uriMap && this.uriMap[id] !== undefined) {
         const { layout } = this.uriMap[id];
-        if (layout === 'page' || (layout === 'section' && postid)) {
+        if (layout === 'page') {
           this.container = 'page';
+        } else if (layout === 'section' && postid) {
+          this.container = 'page.modal';
         } else {
           this.container = 'section';
         }
       } else {
-        // console.log('getmain')
-        // this.store.dispatch(
-        //   new GetContent({ path: 'page/main', layout: 'page', doctype: 'html', id: 'main', body: '' })
-        // );
         // TODO 404 not found
         console.log('404 not found');
       }
-
-      console.log('container!!!:', this.container);
+      // console.log('container!!!:', this.container);
     });
   }
 

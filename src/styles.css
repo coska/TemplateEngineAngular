@@ -29,7 +29,9 @@ body {
   /* font-family: 'Noto Sans KR', sans-serif; */
 }
 
-
+modal-open {
+  overflow-y: hidden !important;
+}
 
 /* Color Theme */
 
@@ -44,6 +46,13 @@ body, .dropdown-menu {
 a { 
   color: #e0e0e0;
 }
+
+a:link,
+a:visited {
+  color:#e0e0e0 !important;
+  text-decoration: none !important;
+}
+
 .sidebar-body a {
   color: #fff;
 }
@@ -198,6 +207,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
+  margin-top: -1.7rem;
 }
 
 @media (min-width: 300px) {
@@ -307,4 +317,9 @@ a.post-link {
 .post-image figurecaption {
   display: inline-block;
   width: 100%;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
