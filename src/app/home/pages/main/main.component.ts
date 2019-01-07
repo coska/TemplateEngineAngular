@@ -21,6 +21,8 @@ export class MainComponent implements OnInit, OnDestroy {
   getStateSub: any;
   routeSub: any;
 
+  container: string;
+
   constructor(private store: Store<AppState>, private route: ActivatedRoute, private _location: Location) {
     this.getState = this.store.select(selectAppState);
 
@@ -37,45 +39,29 @@ export class MainComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(route => {
+      
       const { ppgid, pgid, postid } = route;
       const content = this.content;
       const id = ppgid && pgid ? `${ppgid}/${pgid}` : '';
 
+      this.container = content.layout || '';
+
       // console.log({ id, hit: this.uriMap[id] });
-      if (postid) {
-        const { layout, doctype } = this.uriMap[id];
-        const path = `section/${ppgid}/${pgid}/${postid}`;
-        console.log('getpost:', postid, {layout, doctype, path});
-        this.store.dispatch(
-          new GetContent({
-            ...content,
-            path,
-            doctype,
-            layout: 'page',
-            id: `${ppgid}/${pgid}/${postid}`,
-          })
-        );
-      } else if (this.uriMap && this.uriMap[id] !== undefined) {
-        const { layout, doctype } = this.uriMap[id];
-        if (layout === 'section') {
-          const path = `${layout}/${id}`;
-          console.log('getsection path = ' + path)
-          this.store.dispatch(new GetSection({ ...content, path, id, layout, doctype }));
+
+      if (this.uriMap && this.uriMap[id] !== undefined) {
+        const { layout } = this.uriMap[id];
+        if (layout === 'page') {
+          this.container = 'page';
+        } else if (layout === 'section' && postid) {
+          this.container = 'page.modal';
         } else {
-          // page
-          const path = `${layout}/${id}`;
-          console.log('getpage, path:' + path + ", layout:" + layout + ", doctype=" + doctype) ;
-          this.store.dispatch(new GetContent({ ...content, path, id, layout, doctype }));
+          this.container = 'section';
         }
       } else {
-        console.log('getmain')
-        this.store.dispatch(
-          new GetContent({ path: 'page/main', layout: 'page', doctype: 'html', id: 'main', body: '' })
-        );
-        
-        // this.store.dispatch(new GetContent({ ...content, path:`page/m01/m010101`, id:'m010101', layout:'page', doctype:'html' }));
-        
+        // TODO 404 not found
+        console.log('404 not found');
       }
+      // console.log('container!!!:', this.container);
     });
   }
 

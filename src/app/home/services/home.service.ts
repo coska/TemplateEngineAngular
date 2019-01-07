@@ -133,8 +133,10 @@ export class HomeService {
         dom = this.afterHTMLFilter(dom, '.cms-desc');
       }
 
-      const html = new XMLSerializer().serializeToString(dom);
+      let html = new XMLSerializer().serializeToString(dom);
       // console.log({ html });
+      html = this.htmlFilter(html);
+
       return html;
     } catch (e) {
       return '';
@@ -172,6 +174,15 @@ export class HomeService {
       }
     }
     return dom;
+  }
+
+  htmlFilter(html) {
+    return html
+      // replace style=
+      .replace(/style=/g, 'style1=')
+      // replace <style>, </style>
+      .replace(/<(\/?)style>/g, `<$1style1>`)
+      ;
   }
 
   getSection(path: string): Observable<Section> {

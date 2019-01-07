@@ -113,8 +113,8 @@ export class AppEffects {
       ofType(AppActionTypes.GET_SECTION),
       switchMap((action: GetSection) => {
         // console.log({ GetSection: action.payload });
-        const { id, layout } = action.payload;
-        return this.homeService.getSection(`${layout}/${id}`)
+        const { id, layout, path } = action.payload;
+        return this.homeService.getSection(`${path}`)
           .pipe(
             map(section => {
               return new GetSectionSuccess(section);
