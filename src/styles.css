@@ -112,6 +112,7 @@ aside {
 }
 pre {
   font-size: 0.9rem;
+  overflow: unset;
 }
 .breadcrumb {
   font-size: 0.9rem;
@@ -210,6 +211,10 @@ footer {
     display: none;
   }
 }
+.main-body {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem ;
+}
 
 @media (min-width: 400px) {}
 
@@ -222,8 +227,9 @@ footer {
     display: block;
   }
   .main-body {
-    margin: 1.5rem 1rem;
+    margin: 1rem 1rem 1.5rem 0;
   }
+  
   
 }
 
