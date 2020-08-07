@@ -42,7 +42,7 @@
     "inquirer": "^6.2.0",
     "jekyll-markdown-parser": "^1.1.1",
     "npm": "^6.5.0",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.21.0",
     "rxjs": "^5.5.2",
     "uniqid": "^5.0.3",
     "zone.js": "^0.8.14"
